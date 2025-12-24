@@ -2,14 +2,15 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE_BACKEND = "banking-backend"
-        DOCKER_IMAGE_FRONTEND = "banking-frontend"
+        COMPOSE_PROJECT_NAME = "bank_system"
     }
 
     stages {
+
         stage('Checkout') {
             steps {
-                checkout scm
+                git branch: 'main',
+                    url: 'https://github.com/AvneeshTripathi72/bank_system.git'
             }
         }
 
@@ -21,30 +22,40 @@ pipeline {
             }
         }
 
-        stage('Build Docker Images') {
-            steps {
-                sh 'docker-compose build'
-            }
-        }
-
         stage('Test') {
             steps {
-                echo 'Running Unit Tests...'
                 dir('backend') {
                     sh 'mvn test'
                 }
             }
         }
 
+        stage('Docker Build') {
+            steps {
+                sh '''
+                docker compose down || true
+                docker compose build
+                '''
+            }
+        }
+
         stage('Deploy') {
             steps {
-                echo 'Deploying application...'
-                sh 'docker-compose up -d'
+                sh '''
+                docker compose up -d
+                docker ps
+                '''
             }
         }
     }
 
     post {
+        success {
+            echo '✅ CI/CD Pipeline Completed Successfully'
+        }
+        failure {
+            echo '❌ CI/CD Pipeline Failed'
+        }
         always {
             cleanWs()
         }
