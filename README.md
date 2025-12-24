@@ -95,3 +95,19 @@ Data is persisted using a Docker Volume named `postgres_data`.
 - **Banking**: Account Creation, Deposits, Withdrawals, Transfers.
 - **Reporting**: Transaction History, Audit Logs.
 - **Background Jobs**: Interest Calculation, Fraud Detection.
+
+## CI/CD Pipeline
+
+The project includes a `Jenkinsfile` for automated deployment using **Jenkins**. The pipeline consists of the following stages:
+
+1.  **Checkout**: Pulls the latest code from the GitHub repository.
+2.  **Build Backend**: Compiles the Spring Boot application using Maven (`mvn clean package`).
+3.  **Build Docker Images**: Builds the Docker images for Backend and Frontend (`docker-compose build`).
+4.  **Test**: Runs unit tests to ensure code stability (`mvn test`).
+5.  **Deploy**: Deploys the containers using Docker Compose (`docker-compose up -d`).
+
+### Setting up Jenkins
+1.  Install Jenkins and the **Docker Pipeline** plugin.
+2.  Create a new **Pipeline** job.
+3.  Connect it to your GitHub repository.
+4.  Build Now to trigger the pipeline.
