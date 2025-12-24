@@ -1,12 +1,51 @@
 # Banking / FinTech System
 
-This is a complete Banking / FinTech System built with Spring Boot (Backend) and React + Vite (Frontend), orchestrated via Docker.
+This is a complete Banking / FinTech System built with **Spring Boot** (Backend) and **React + Vite** (Frontend), orchestrated via **Docker**.
 
 ## Project Structure
 
-- **backend/**: Java Spring Boot application (API, Security, Database interactions).
-- **frontend/**: React application (UI, Auth, Dashboard).
-- **docker-compose.yml**: Deployment configuration.
+```bash
+banking-fintech-system/
+├── backend/                  # Java Spring Boot Application
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/com/fintech/banking/
+│   │   │   │   ├── config/       # Security & App Config
+│   │   │   │   ├── controller/   # REST Controllers
+│   │   │   │   ├── entity/       # JPA Entities
+│   │   │   │   ├── repository/   # Data Access Layer
+│   │   │   │   ├── service/      # Business Logic
+│   │   │   │   ├── security/     # JWT & Auth Filters
+│   │   │   │   └── BankingApplication.java
+│   │   │   └── resources/
+│   │   │       └── application.yml
+│   ├── Dockerfile            # Backend Docker Image Config
+│   └── pom.xml               # Maven Dependencies
+├── frontend/                 # React + Vite Application
+│   ├── src/
+│   │   ├── api/              # Axios & API Calls
+│   │   ├── auth/             # Auth Context & Guards
+│   │   ├── components/       # Reusable UI Components
+│   │   ├── pages/            # Page Views (Login, Dashboard, etc.)
+│   │   ├── utils/            # Helper Functions
+│   │   ├── App.jsx           # Main App Component
+│   │   └── main.jsx          # Entry Point
+│   ├── Dockerfile            # Frontend Docker Image Config
+│   ├── nginx.conf            # Nginx Server Config
+│   ├── package.json          # Node Dependencies
+│   └── vite.config.js        # Vite Configuration
+├── jenkins/
+│   └── Jenkinsfile           # CI/CD Pipeline
+├── docker-compose.yml        # Orchestration Config
+└── README.md                 # Project Documentation
+```
+
+## Tech Stack
+
+- **Backend**: Java 17, Spring Boot 3, Spring Security, Spring Data JPA, JWT (JSON Web Tokens).
+- **Frontend**: React 18, Vite, TailwindCSS, Axios, React Router.
+- **Database**: PostgreSQL (Running in Docker).
+- **DevOps**: Docker, Docker Compose, Jenkins.
 
 ## Pre-requisites
 
@@ -23,28 +62,36 @@ This is a complete Banking / FinTech System built with Spring Boot (Backend) and
     ```bash
     docker-compose up --build
     ```
+    *This might take a few minutes the first time.*
+
 3.  Access the application:
-    - **Frontend**: http://localhost:5173
-    - **Backend API**: http://localhost:8080
-    - **Swagger Docs**: http://localhost:8080/swagger-ui/index.html
+    - **Frontend**: [http://localhost:5173](http://localhost:5173) (or port 80 if via Nginx production build)
+    - **Backend API**: [http://localhost:9090](http://localhost:9090)
+    - **Swagger Docs**: [http://localhost:9090/swagger-ui/index.html](http://localhost:9090/swagger-ui/index.html)
 
 ### Local Development
 
 #### Backend
 1.  Navigate to `backend/`.
 2.  Run `mvn spring-boot:run`.
+    *(Ensure PostgreSQL is running locally or update config to point to Docker DB)*
 
 #### Frontend
 1.  Navigate to `frontend/`.
 2.  Run `npm install`.
 3.  Run `npm run dev`.
 
+## Data Storage
+
+Data is persisted using a Docker Volume named `postgres_data`.
+- To access the database: Connect to `localhost:5432`
+- **Username**: `postgres`
+- **Password**: `postgres`
+- **Database**: `banking_db`
+
 ## Features
+
 - **Security**: JWT Authentication, Role-based Access Control (USER, ADMIN).
 - **Banking**: Account Creation, Deposits, Withdrawals, Transfers.
 - **Reporting**: Transaction History, Audit Logs.
 - **Background Jobs**: Interest Calculation, Fraud Detection.
-
-## Tech Stack
-- **Backend**: Spring Boot 3, Spring Security, JPA, PostgreSQL, JJWT.
-- **Frontend**: React, Vite, TailwindCSS, Axios.
