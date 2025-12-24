@@ -111,3 +111,43 @@ The project includes a `Jenkinsfile` for automated deployment using **Jenkins**.
 2.  Create a new **Pipeline** job.
 3.  Connect it to your GitHub repository.
 4.  Build Now to trigger the pipeline.
+
+## ☁️ Deployment Guide (AWS EC2)
+
+Follow these steps to deploy this banking system on an **AWS EC2** instance.
+
+### 1. Launch EC2 Instance
+- **AMI**: Amazon Linux 2023 or Ubuntu 22.04 LTS.
+- **Instance Type**: t2.medium or larger (Recommended for Java + Maven build).
+- **Security Group**: Open ports `22` (SSH), `80` (Frontend), and `9090` (Backend API).
+
+### 2. Install Docker & Git
+Connect to your instance via SSH and run:
+
+```bash
+# For Amazon Linux 2023
+sudo yum update -y
+sudo yum install docker git -y
+sudo service docker start
+sudo usermod -a -G docker ec2-user
+# Logout and login again to apply group changes
+```
+
+### 3. Install Docker Compose
+```bash
+sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose version
+```
+
+### 4. Deploy Application
+```bash
+# Clone the repository
+git clone https://github.com/AvneeshTripathi72/bank_system.git
+cd bank_system
+
+# Start the application
+docker-compose up -d --build
+```
+The application will be live at `http://<your-ec2-public-ip>`.
+
