@@ -29,7 +29,7 @@ const Register = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-md w-96">
-        <h2 className="text-2xl font-bold mb-6 text-center text-blue-600">Register</h2>
+        <h2 className="text-2xl font-bold mb-6 text-center text-sky-600">Register</h2>
         {error && <div className="text-red-500 mb-4 text-center">{error}</div>}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
@@ -39,7 +39,7 @@ const Register = () => {
               name="fullName"
               value={formData.fullName}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-400 rounded bg-gray-50 text-gray-900 focus:outline-none focus:bg-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 placeholder-gray-500"
+              className="w-full px-4 py-2 border border-gray-400 rounded bg-gray-50 text-gray-900 focus:outline-none focus:bg-white focus:border-sky-500 focus:ring-1 focus:ring-sky-500 placeholder-gray-500"
               required
             />
           </div>
@@ -50,7 +50,7 @@ const Register = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-400 rounded bg-gray-50 text-gray-900 focus:outline-none focus:bg-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 placeholder-gray-500"
+              className="w-full px-4 py-2 border border-gray-400 rounded bg-gray-50 text-gray-900 focus:outline-none focus:bg-white focus:border-sky-500 focus:ring-1 focus:ring-sky-500 placeholder-gray-500"
               required
             />
           </div>
@@ -61,7 +61,7 @@ const Register = () => {
               name="username"
               value={formData.username}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-400 rounded bg-gray-50 text-gray-900 focus:outline-none focus:bg-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 placeholder-gray-500"
+              className="w-full px-4 py-2 border border-gray-400 rounded bg-gray-50 text-gray-900 focus:outline-none focus:bg-white focus:border-sky-500 focus:ring-1 focus:ring-sky-500 placeholder-gray-500"
               required
             />
           </div>
@@ -72,16 +72,16 @@ const Register = () => {
               name="password"
               value={formData.password}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-400 rounded bg-gray-50 text-gray-900 focus:outline-none focus:bg-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 placeholder-gray-500"
+              className="w-full px-4 py-2 border border-gray-400 rounded bg-gray-50 text-gray-900 focus:outline-none focus:bg-white focus:border-sky-500 focus:ring-1 focus:ring-sky-500 placeholder-gray-500"
               required
             />
           </div>
-          <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
+          <button type="submit" className="w-full bg-sky-500 text-white py-2 rounded hover:bg-sky-600">
             Register
           </button>
         </form>
          <div className="mt-4 text-center">
-          <p className="text-gray-600">Already have an account? <Link to="/login" className="text-blue-500 hover:underline">Login</Link></p>
+          <p className="text-gray-600">Already have an account? <Link to="/login" className="text-sky-500 hover:underline">Login</Link></p>
         </div>
       </div>
     </div>
