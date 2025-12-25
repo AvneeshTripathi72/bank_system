@@ -17,7 +17,9 @@ pipeline {
         stage('Build Backend') {
             steps {
                 dir('backend') {
-                    sh 'mvn clean package -DskipTests'
+                    sh '''
+                    mvn clean package -DskipTests
+                    '''
                 }
             }
         }
@@ -25,7 +27,9 @@ pipeline {
         stage('Test') {
             steps {
                 dir('backend') {
-                    sh 'mvn test'
+                    sh '''
+                    mvn test
+                    '''
                 }
             }
         }
@@ -33,8 +37,8 @@ pipeline {
         stage('Docker Build') {
             steps {
                 sh '''
-                docker compose down || true
-                docker compose build
+                docker-compose down || true
+                docker-compose build
                 '''
             }
         }
@@ -42,7 +46,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                docker compose up -d
+                docker-compose up -d
                 docker ps
                 '''
             }
