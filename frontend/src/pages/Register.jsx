@@ -76,7 +76,7 @@ const Register = () => {
               required
             />
           </div>
-          <button type="submit" className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">
+          <button type="submit" className="w-full bg-pink-400 text-white py-2 rounded hover:bg-pink-500">
             Register
           </button>
         </form>
