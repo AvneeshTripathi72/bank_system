@@ -33,7 +33,7 @@ const Login = () => {
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-400 rounded bg-gray-50 text-gray-900 focus:outline-none focus:bg-white focus:border-green-500 focus:ring-1 focus:ring-green-500 placeholder-gray-500"
+              className="w-full px-4 py-2 border border-gray-400 rounded bg-white text-black focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 placeholder-gray-500"
               required
             />
           </div>
@@ -43,7 +43,7 @@ const Login = () => {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-400 rounded bg-gray-50 text-gray-900 focus:outline-none focus:bg-white focus:border-green-500 focus:ring-1 focus:ring-green-500 placeholder-gray-500"
+              className="w-full px-4 py-2 border border-gray-400 rounded bg-white text-black focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 placeholder-gray-500"
               required
             />
           </div>
