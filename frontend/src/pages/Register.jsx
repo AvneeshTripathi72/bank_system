@@ -39,7 +39,7 @@ const Register = () => {
               name="fullName"
               value={formData.fullName}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-400 rounded bg-white text-black focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 placeholder-gray-500"
+              className="w-full px-4 py-2 border !border-gray-400 rounded !bg-white !text-black focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 placeholder-gray-500"
               required
             />
           </div>
@@ -50,7 +50,7 @@ const Register = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-400 rounded bg-white text-black focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 placeholder-gray-500"
+              className="w-full px-4 py-2 border !border-gray-400 rounded !bg-white !text-black focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 placeholder-gray-500"
               required
             />
           </div>
@@ -61,7 +61,7 @@ const Register = () => {
               name="username"
               value={formData.username}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-400 rounded bg-white text-black focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 placeholder-gray-500"
+              className="w-full px-4 py-2 border !border-gray-400 rounded !bg-white !text-black focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 placeholder-gray-500"
               required
             />
           </div>
@@ -72,7 +72,7 @@ const Register = () => {
               name="password"
               value={formData.password}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-400 rounded bg-white text-black focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 placeholder-gray-500"
+              className="w-full px-4 py-2 border !border-gray-400 rounded !bg-white !text-black focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 placeholder-gray-500"
               required
             />
           </div>
