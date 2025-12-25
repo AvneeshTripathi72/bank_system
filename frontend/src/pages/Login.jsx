@@ -24,7 +24,7 @@ const Login = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-md w-96">
-        <h2 className="text-2xl font-bold mb-6 text-center text-sky-600">Login</h2>
+        <h2 className="text-2xl font-bold mb-6 text-center text-green-600">Login</h2>
         {error && <div className="text-red-500 mb-4 text-center">{error}</div>}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
@@ -33,7 +33,7 @@ const Login = () => {
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-400 rounded bg-gray-50 text-gray-900 focus:outline-none focus:bg-white focus:border-sky-500 focus:ring-1 focus:ring-sky-500 placeholder-gray-500"
+              className="w-full px-4 py-2 border border-gray-400 rounded bg-gray-50 text-gray-900 focus:outline-none focus:bg-white focus:border-green-500 focus:ring-1 focus:ring-green-500 placeholder-gray-500"
               required
             />
           </div>
@@ -43,16 +43,16 @@ const Login = () => {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-400 rounded bg-gray-50 text-gray-900 focus:outline-none focus:bg-white focus:border-sky-500 focus:ring-1 focus:ring-sky-500 placeholder-gray-500"
+              className="w-full px-4 py-2 border border-gray-400 rounded bg-gray-50 text-gray-900 focus:outline-none focus:bg-white focus:border-green-500 focus:ring-1 focus:ring-green-500 placeholder-gray-500"
               required
             />
           </div>
-          <button type="submit" className="w-full bg-sky-500 text-white py-2 rounded hover:bg-sky-600">
+          <button type="submit" className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">
             Login
           </button>
         </form>
         <div className="mt-4 text-center">
-          <p className="text-gray-600">Don't have an account? <Link to="/register" className="text-sky-500 hover:underline">Register</Link></p>
+          <p className="text-gray-600">Don't have an account? <Link to="/register" className="text-green-500 hover:underline">Register</Link></p>
         </div>
       </div>
     </div>
